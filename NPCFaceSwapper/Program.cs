@@ -1712,8 +1712,10 @@ namespace NPCFaceSwapper
                 {
                     logs.Add($"Fail Dest npc {tempNpc.EditorID} {tempNpc.FormKey.ModKey} {tempNpc.FormKey} swap from source {desired_context.Record.EditorID} in mod {desired_context.ModKey} {desired_context.Record.FormKey} is complete.");
 
-                    throw new Exception("Missing facegen");
-
+                    // FIX SKIP IT
+                    // throw new Exception("Missing facegen");
+                    // continue;
+                    return;
                 }
 
 
