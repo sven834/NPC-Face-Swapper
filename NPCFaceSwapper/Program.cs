@@ -1615,6 +1615,9 @@ namespace NPCFaceSwapper
                     tempNpc.Configuration.Flags.SetFlag(NpcConfiguration.Flag.Female, false);
                 }
 
+                // TMP FIX Female-to-Male conversion
+                tempNpc.Configuration.Flags.SetFlag(NpcConfiguration.Flag.Female, false);
+
                 //bijin has worn body armor...
                 tempNpc.WornArmor = snpc.WornArmor;
 
@@ -1711,7 +1714,7 @@ namespace NPCFaceSwapper
                 if (!found_facegen)
                 {
                     logs.Add($"Fail Dest npc {tempNpc.EditorID} {tempNpc.FormKey.ModKey} {tempNpc.FormKey} swap from source {desired_context.Record.EditorID} in mod {desired_context.ModKey} {desired_context.Record.FormKey} is complete.");
-
+                    Log($"{swap_count}/{npc_map.Count} Fail Dest npc {tempNpc.EditorID} {tempNpc.FormKey.ModKey} {tempNpc.FormKey} swap from source {desired_context.Record.EditorID} in mod {desired_context.ModKey} {desired_context.Record.FormKey} is complete.");
                     // FIX SKIP IT
                     // throw new Exception("Missing facegen");
                     // continue;
