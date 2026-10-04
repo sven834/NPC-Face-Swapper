@@ -1606,17 +1606,14 @@ namespace NPCFaceSwapper
 
                     tempNpc.Configuration.Flags = tempNpc.Configuration.Flags | NpcConfiguration.Flag.Female;
 
-                    //this does not work
-                    //tempNpc.Configuration.Flags.SetFlag(NpcConfiguration.Flag.Female, true);
+                    tempNpc.Configuration.Flags = tempNpc.Configuration.Flags | NpcConfiguration.Flag.Female;
 
                 }
                 else
                 {
-                    tempNpc.Configuration.Flags.SetFlag(NpcConfiguration.Flag.Female, false);
+                    // Female -> Male: Female-Flag entfernen
+                    tempNpc.Configuration.Flags &= ~NpcConfiguration.Flag.Female;
                 }
-
-                // TMP FIX Female-to-Male conversion
-                tempNpc.Configuration.Flags.SetFlag(NpcConfiguration.Flag.Female, false);
 
                 //bijin has worn body armor...
                 tempNpc.WornArmor = snpc.WornArmor;
